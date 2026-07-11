@@ -285,11 +285,11 @@ https://youtu.be/your-demo-link
 
 🎓 MCA Student | AI & Machine Learning Engineer
 
-📧 Email: yourmail@gmail.com
+📧 Email: vijaymvijaybabu@gmail.com
 
-🔗 GitHub: https://github.com/yourusername
+🔗 GitHub: https://github.com/vijaymvijaybabu
 
-🔗 LinkedIn: https://linkedin.com/in/yourprofile
+🔗 LinkedIn: www.linkedin.com/in/manoharbabu25
 
 ---
 
