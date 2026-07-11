@@ -1,306 +1,103 @@
-# 🖐️ AI Hand Gesture Recognition & Computer Control System
+# 🖐 AI-Powered Hand Gesture Recognition System
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-green)
-![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand%20Tracking-orange)
-![Flask](https://img.shields.io/badge/Flask-Web%20Application-lightgrey)
-![License](https://img.shields.io/badge/License-MIT-red)
-
-## 📌 Project Overview
-
-The **AI Hand Gesture Recognition & Computer Control System** is a real-time Computer Vision application that enables users to interact with their computer using hand gestures instead of traditional input devices like a keyboard and mouse.
-
-The system utilizes **MediaPipe** for accurate hand landmark detection, **OpenCV** for image processing, and a custom gesture classification model to recognize gestures in real time. Recognized gestures are mapped to various computer actions such as cursor movement, clicking, scrolling, drawing, and media control.
-
-A Flask-based web interface provides live camera streaming, gesture visualization, image prediction, gesture history, and system controls.
+Control your computer using hand gestures detected in real-time via your webcam.
+Built with **Flask**, **OpenCV**, **MediaPipe**, and a custom ML gesture classifier.
 
 ---
 
-# 🎯 Features
+## 🚀 Quick Start
 
-✅ Real-Time Hand Gesture Recognition
-
-✅ AI-Based Gesture Classification
-
-✅ Cursor Movement using Hand Tracking
-
-✅ Left Click
-
-✅ Right Click
-
-✅ Double Click
-
-✅ Scroll Up / Scroll Down
-
-✅ Air Drawing
-
-✅ Live Gesture Confidence Score
-
-✅ Hand Landmark Detection
-
-✅ Image-Based Gesture Prediction
-
-✅ Gesture History Tracking
-
-✅ Live FPS Monitoring
-
-✅ Flask Web Dashboard
-
-✅ Upload Image for Gesture Prediction
-
----
-
-# 🛠️ Technologies Used
-
-### Programming Language
-- Python
-
-### Computer Vision
-- OpenCV
-- MediaPipe
-
-### Machine Learning
-- NumPy
-- Custom Gesture Classifier
-
-### Web Framework
-- Flask
-
-### Automation
-- PyAutoGUI
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
----
-
-# 🏗️ System Architecture
-
-```
-Web Camera
-     │
-     ▼
-Frame Capture
-     │
-     ▼
-MediaPipe Hand Detection
-     │
-     ▼
-21 Hand Landmarks
-     │
-     ▼
-Gesture Classification
-     │
-     ▼
-Gesture Recognition
-     │
-     ▼
-Computer Action Execution
-     │
-     ▼
-Flask Dashboard
-```
-
----
-
-# 📂 Project Structure
-
-```
-AI-Hand-Gesture-Control/
-
-│── static/
-│── templates/
-│── utils/
-│── models/
-│── dataset/
-│── app.py
-│── train_model.py
-│── requirements.txt
-│── README.md
-```
-
----
-
-# 🚀 Installation
-
-## Clone Repository
-
-```bash
-git clone https://github.com/yourusername/AI-Hand-Gesture-Control.git
-
-cd AI-Hand-Gesture-Control
-```
-
----
-
-## Create Virtual Environment
-
-Windows
-
-```bash
-python -m venv venv
-
-venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-python3 -m venv venv
-
-source venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
+### 1. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
----
+> **Note (Linux):** PyAutoGUI may need extra packages:
+> ```bash
+> sudo apt-get install python3-tk python3-dev scrot
+> pip install python3-xlib
+> ```
 
-# ▶️ Run the Application
+> **Note (macOS):** Grant Terminal/Python access to Accessibility & Screen Recording in
+> System Preferences → Privacy & Security.
 
+### 2. Run the App
 ```bash
 python app.py
 ```
 
-Open your browser and visit:
+### 3. Open in Browser
+Navigate to **http://127.0.0.1:5000**
+
+---
+
+## 🖐 Supported Gestures & Actions
+
+| Gesture       | Emoji | Action Triggered            |
+|---------------|-------|-----------------------------|
+| Open Palm     | 🖐    | Play / Pause (Space)        |
+| Fist          | ✊    | Left Mouse Click            |
+| Thumbs Up     | 👍    | Volume Up                   |
+| Thumbs Down   | 👎    | Volume Down                 |
+| Peace / V     | ✌️    | Screenshot (Ctrl+Shift+S)   |
+| Point Up      | ☝️    | Move Cursor Up              |
+| Point Right   | 👉    | Move Cursor Right           |
+| Point Left    | 👈    | Move Cursor Left            |
+| OK Sign       | 👌    | Enter / Confirm             |
+| Rock On       | 🤘    | Mute Toggle                 |
+| Call Me       | 🤙    | Next Media Track            |
+| Pinch         | 🤏    | Scroll Up / Down            |
+
+---
+
+## 🏗 Project Structure
 
 ```
-http://127.0.0.1:5000
-```
-
----
-
-# 📷 Supported Gestures
-
-| Gesture | Action |
-|----------|--------|
-| Open Palm | Cursor Movement |
-| Fist | Clear Drawing |
-| Point Up | Air Drawing |
-| Victory | Left Click |
-| Thumb Up | Right Click |
-| Pinch | Scroll |
-| Custom Gestures | User Defined |
-
----
-
-# 🧠 AI Pipeline
-
-1. Capture live video
-2. Detect hands using MediaPipe
-3. Extract 21 hand landmarks
-4. Classify gesture using AI model
-5. Execute mapped computer action
-6. Display confidence score
-7. Update gesture history
-8. Stream processed video to Flask dashboard
-
----
-
-# 📊 Project Highlights
-
-- Real-time gesture recognition
-- Low latency processing
-- Live FPS monitoring
-- Smooth hand tracking
-- AI-powered gesture classification
-- Image upload prediction
-- Interactive web interface
-- Modular project architecture
-
----
-
-# 📸 Screenshots
-
-Add screenshots inside the **screenshots/** folder.
-
-Example:
-
-```
-screenshots/home.png
-
-screenshots/live_detection.png
-
-screenshots/gesture_history.png
-
-screenshots/image_prediction.png
+gesture_control/
+├── app.py                    # Flask server & video pipeline
+├── requirements.txt
+├── README.md
+├── utils/
+│   ├── gesture_classifier.py # ML gesture recognition engine
+│   └── gesture_controller.py # OS action executor (PyAutoGUI)
+└── templates/
+    └── index.html            # Live dashboard UI
 ```
 
 ---
 
-# 🎥 Demo
+## ⚙️ How It Works
 
-Add your YouTube demo here.
+```
+Webcam → OpenCV → MediaPipe (21 landmarks) → GestureClassifier → GestureController
+                                                     ↓                     ↓
+                                               Gesture Name         OS Action (mouse/keyboard)
+                                                     ↓
+                                             Flask JSON API → Browser Dashboard
+```
 
-Example
-
-https://youtu.be/your-demo-link
-
----
-
-# 📚 Future Improvements
-
-- Voice Assistant Integration
-- Sign Language Recognition
-- Gesture Customization
-- Multi-Hand Collaboration
-- Virtual Mouse
-- Virtual Keyboard
-- AI Drawing Assistant
-- Volume & Brightness Control
-- Presentation Control
-- Smart Home Integration
-- Deep Learning Gesture Recognition
-- Mobile Version
+1. **MediaPipe Hands** detects 21 3D hand landmarks per frame.
+2. **GestureClassifier** analyses finger extension states and angles to classify gestures.
+3. **GestureController** maps gestures to PyAutoGUI mouse/keyboard/media actions with debouncing.
+4. **Flask** serves the video stream (`/video_feed`) and gesture state (`/gesture_data`) as APIs.
+5. **Dashboard** polls `/gesture_data` every 100 ms and visualises everything live.
 
 ---
 
-# 💻 Skills Demonstrated
+## 🛠 Configuration
 
-- Artificial Intelligence
-- Machine Learning
-- Computer Vision
-- Hand Tracking
-- Gesture Recognition
-- Image Processing
-- OpenCV
-- MediaPipe
-- Flask
-- Python
-- Human Computer Interaction
-- Real-Time AI Systems
+Edit `utils/gesture_controller.py` to:
+- Change debounce delays (prevent repeated triggers)
+- Remap gestures to different keyboard shortcuts
+
+Edit `utils/gesture_classifier.py` to:
+- Add new gestures
+- Adjust detection thresholds
 
 ---
 
-# 👨‍💻 Author
+## 💻 System Requirements
 
-**Macherla Manohar Babu**
-
-🎓 MCA Student | AI & Machine Learning Engineer
-
-📧 Email: yourmail@gmail.com
-
-🔗 GitHub: https://github.com/yourusername
-
-🔗 LinkedIn: https://linkedin.com/in/yourprofile
-
----
-
-# ⭐ Support
-
-If you like this project, don't forget to ⭐ star the repository.
-
-It motivates future improvements and helps others discover the project.
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
+- Python 3.9+
+- Webcam (built-in or USB)
+- OS: Windows 10+, macOS 12+, Ubuntu 20.04+
